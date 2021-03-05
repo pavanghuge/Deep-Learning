@@ -1,0 +1,13 @@
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "train.py", line 27, in <module>
+    x_train = np.load(data_file)
+  File "/afs/cad/linux/anaconda3.8/anaconda/lib/python3.8/site-packages/numpy/lib/npyio.py", line 452, in load
+    return format.read_array(fid, allow_pickle=allow_pickle,
+  File "/afs/cad/linux/anaconda3.8/anaconda/lib/python3.8/site-packages/numpy/lib/format.py", line 785, in read_array
+    array.shape = shape
+ValueError: cannot reshape array of size 245325800 into shape (12730,3,112,112)
+Traceback (most recent call last):
+  File "test.py", line 22, in <module>
+    bre
+NameError: name 'bre' is not defined
