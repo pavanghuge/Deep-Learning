@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --job-name=dot_open_mp
+#SBATCH --output=dot_open_mp.%j.out # %j expands to slurm JobID
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=10
+#SBATCH --partition=datasci
+#SBATCH --gres=gpu:1
+
+#purge and load the correct modules
+module purge > /dev/null 2>&1
+module load cuda
+module load python/3.8
+module load intel/19.1.0.166
+
+
+
+/usr/bin/time -f %e -o dot_time_openmp /home/p/pbg7/Assignment2/dot_openmp /home/p/pbg7/Assignment2/testdata /home/p/pbg7/assignment2/testw_vector 3 3 1 > output_dot_openmp
